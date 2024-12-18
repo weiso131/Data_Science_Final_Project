@@ -2,10 +2,8 @@ import os
 
 # 指定資料夾路徑
 
-folder_path = "data"  # 替換為你的資料夾路徑
+folder_path = "original_csv"  # 替換為你的資料夾路徑
 
-if not os.path.exists(folder_path):
-    os.mkdir(folder_path)
 
 
 # 遍歷資料夾中的所有 CSV 檔案

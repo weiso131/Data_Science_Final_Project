@@ -1,13 +1,13 @@
 import os
 
 # 指定資料夾路徑
-folder_path = "data"  # 替換成您的資料夾路徑
-output_file = "merged_output.txt"  # 輸出結果的檔案路徑
+folder_path = "original_csv"  # 替換成您的資料夾路徑
+output_file = "merged_output.csv"  # 輸出結果的檔案路徑
 
 # 遍歷資料夾中的所有 CSV 檔案
 files = [f for f in os.listdir(folder_path) if f.endswith(".csv")]
 
-all_content = []  # 用來儲存所有檔案的內容
+all_content = ["\"日期\",\"成交股數\",\"成交金額\",\"開盤價\",\"最高價\",\"最低價\",\"收盤價\",\"漲跌價差\",\"成交筆數\"\n"]  # 用來儲存所有檔案的內容
 
 # 讀取所有檔案並將內容加到 all_content
 for filename in sorted(files):  # 按照字典順序排序

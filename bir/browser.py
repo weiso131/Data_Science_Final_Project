@@ -31,9 +31,14 @@ try:
     stock_input = wait.until(EC.presence_of_element_located((By.NAME, "stockNo")))
     stock_input.clear()
     stock_input.send_keys(stock)  # 輸入股票代號
+except Exception as e:
+    print("代號輸入發生錯誤:", e)
+
+
 
     
-    while True:
+while True:
+    try:
         # 等待年份下拉選單可用
         year_select = wait.until(EC.presence_of_element_located((By.NAME, "yy")))
         year_select_dropdown = Select(year_select)
@@ -62,12 +67,11 @@ try:
             b+=1
             start_year=str(b)
         start_month=str(a)
-        time.sleep(1)
+        time.sleep(5)
+    except Exception as e:
+        print("發生錯誤但應該問題不大？:", e)
 
-        
-        
-except Exception as e:
-    print("發生錯誤:", e)
+    
 
 
 input("輸入任意字元結束程式")
