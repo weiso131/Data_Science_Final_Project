@@ -62,6 +62,7 @@ try:
             b+=1
             start_year=str(b)
         start_month=str(a)
+        time.sleep(1)
 
         
         
